@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 {
 	[SerializeField] UnityEngine.UI.Image healthbarImage;
 	[SerializeField] GameObject ui;
+	[SerializeField] GameObject player;
 
 	[SerializeField] GameObject cameraHolder;
 
@@ -130,7 +131,11 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	void Move()
 	{
-        if (Input.GetKey(KeyCode.W))
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			Die();
+		}
+		if (Input.GetKey(KeyCode.W))
         {
             rb.AddForce((transform.forward) * Spead);
         }
@@ -227,6 +232,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	void Die()
 	{
+		GameObject prefabToSpawn = Instantiate(player, transform.position, transform.rotation);
+		prefabToSpawn.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity);
 		playerManager.Die();
 	}
 }

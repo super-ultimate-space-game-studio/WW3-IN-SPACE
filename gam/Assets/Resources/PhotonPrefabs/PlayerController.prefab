@@ -463,6 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbarImage: {fileID: 9164482625098755901}
   ui: {fileID: 903522642830071290}
+  player: {fileID: 2249890556949037601, guid: 42c6fc13554aa024d9f41bf4669e659c, type: 3}
   cameraHolder: {fileID: 1488053958305132839}
   mouseSensitivity: 3
   sprintSpeed: 6
