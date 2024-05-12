@@ -1,19 +1,21 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 {
-	[SerializeField] Image healthbarImage;
+	[SerializeField] UnityEngine.UI.Image healthbarImage;
 	[SerializeField] GameObject ui;
 
 	[SerializeField] GameObject cameraHolder;
 
-	[SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
+	[SerializeField] float mouseSensitivity, sprintSpeed, Spead, jumpForce, smoothTime;
 
 	[SerializeField] Item[] items;
 
@@ -44,7 +46,9 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	void Start()
 	{
-		if(PV.IsMine)
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+        if (PV.IsMine)
 		{
 			EquipItem(0);
 		}
@@ -63,7 +67,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 		Look();
 		Move();
-		Jump();
+		
 
 		for(int i = 0; i < items.Length; i++)
 		{
@@ -111,27 +115,51 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 	void Look()
 	{
 		transform.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * mouseSensitivity);
+        transform.Rotate(Vector3.right * Input.GetAxisRaw("Mouse Y") * -mouseSensitivity);
+        if (Input.GetKey(KeyCode.E))
+        {
+			transform.Rotate(new Vector3(0, 0, 1) * -1);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(new Vector3(0, 0, 1) * 1);
+        }
 
-		verticalLookRotation += Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
-		verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
 
-		cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
-	}
+    }
 
 	void Move()
 	{
-		Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        if (Input.GetKey(KeyCode.W))
+        {
+            rb.AddForce((transform.forward) * Spead);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce((-transform.forward) * Spead);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce((transform.rotation * Vector3.left) * Spead);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce((transform.rotation * Vector3.right) * Spead);
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce((transform.rotation * Vector3.up) * Spead);
+        }
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            rb.AddForce((transform.rotation * Vector3.down) * Spead);
+        }
+        //Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
-		moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
-	}
+        //smoveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
+    }
 
-	void Jump()
-	{
-		if(Input.GetKeyDown(KeyCode.Space) && grounded)
-		{
-			rb.AddForce(transform.up * jumpForce);
-		}
-	}
+
 
 	void EquipItem(int _index)
 	{
