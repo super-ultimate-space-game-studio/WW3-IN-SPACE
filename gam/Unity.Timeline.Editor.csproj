@@ -74,8 +74,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Window\Modes\TimelineReadOnlyMode.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Signals\SignalReceiverInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Actions\ClipsActions.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\Sequence\MarkerHeaderTrackManipulator.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\inspectors\EditorClip.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\Sequence\MarkerHeaderTrackManipulator.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\treeview\ItemGui\ISelectable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\treeview\Manipulator.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Signals\SignalManager.cs" />
@@ -153,8 +153,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Localization\Localization.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Utilities\Range.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\Move\MoveItemModeRipple.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\Sequence\RectangleSelect.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\UnityEditorInternals.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\Sequence\RectangleSelect.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Attributes\TimelineShortcutAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Window\Modes\TimeReferenceMode.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Recording\TimelineRecording.cs" />

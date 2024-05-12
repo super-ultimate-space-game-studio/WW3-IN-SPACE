@@ -908,13 +908,13 @@
       <Project>{F4322E7B-179E-8409-CD59-3AA354401084}</Project>
       <Name>Unity.AI.Navigation.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Utilities.Player.csproj">
-      <Project>{DD174356-A7C8-5210-4756-5EA2D7958C7B}</Project>
-      <Name>PhotonUnityNetworking.Utilities.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.Player.csproj">
       <Project>{47A9E65D-7CFC-C3CF-46ED-B7A8817129F9}</Project>
       <Name>PhotonUnityNetworking.Demos.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="PhotonUnityNetworking.Utilities.Player.csproj">
+      <Project>{DD174356-A7C8-5210-4756-5EA2D7958C7B}</Project>
+      <Name>PhotonUnityNetworking.Utilities.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
       <Project>{0698C5F3-A058-C1DC-4A9F-BFFC3416DE58}</Project>
