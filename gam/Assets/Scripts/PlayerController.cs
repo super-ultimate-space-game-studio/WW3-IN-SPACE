@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -232,7 +233,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	void Die()
 	{
-		GameObject prefabToSpawn = Instantiate(player, transform.position, transform.rotation);
+		GameObject prefabToSpawn = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "body"), transform.position, transform.rotation);
 		prefabToSpawn.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity);
 		playerManager.Die();
 	}

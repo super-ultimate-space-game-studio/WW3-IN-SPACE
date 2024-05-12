@@ -9,7 +9,6 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerManager : MonoBehaviour
 {
-	[SerializeField] GameObject player;
 	PhotonView PV;
 
 	GameObject controller;
@@ -38,7 +37,6 @@ public class PlayerManager : MonoBehaviour
 	public void Die()
 	{
 		Vector3 deathPos = this.gameObject.transform.position;
-		Destroy(this.gameObject);
 		PhotonNetwork.Destroy(controller);
 		CreateController();
 
