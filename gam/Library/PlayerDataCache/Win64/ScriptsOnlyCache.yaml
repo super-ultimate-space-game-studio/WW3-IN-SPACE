@@ -8,23 +8,18 @@ ScriptsOnlyBuild:
     - SingleShotGun
     - UsernameDisplay
     Assembly-CSharp.dll:
-    - Billboard
     - GunInfo
     - Launcher
     - Menu
     - MenuManager
-    - PlayerController
     - PlayerListItem
-    - PlayerManager
     - PlayerNameManager
     - RoomListItem
     - RoomManager
     - Scoreboard
     - ScoreboardItem
-    - SingleShotGun
     - SpawnManager
     - Spawnpoint
-    - UsernameDisplay
     PhotonUnityNetworking:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -44,7 +39,6 @@ ScriptsOnlyBuild:
     PhotonUnityNetworking.Editor.dll:
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
-    - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.Rider.Editor.dll:
@@ -894,7 +888,7 @@ ScriptsOnlyBuild:
     className: PlayerListItem
   - hash:
       serializedVersion: 2
-      Hash: e49e3b51fedea46994c14dfca85d596a
+      Hash: 747ec6f164e870faca7a6c102a5daa6a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GunInfo
@@ -1838,4 +1832,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/takei/Desktop/ww3/FPS Game.exe
+  playerPath: C:/Users/tomas/Downloads/Nowy folder/FPS Game.exe
