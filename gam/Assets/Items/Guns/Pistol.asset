@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   itemName: Pistol
-  damage: 12
+  damage: 4
   koncback: 0
   spead: 0

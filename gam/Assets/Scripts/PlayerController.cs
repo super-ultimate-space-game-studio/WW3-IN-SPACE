@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 	[SerializeField] UnityEngine.UI.Image healthbarImage;
 	[SerializeField] GameObject ui;
 	[SerializeField] GameObject player;
+	public AudioSource audioShoot;
 
 	[SerializeField] GameObject cameraHolder;
 
 	[SerializeField] float mouseSensitivity, sprintSpeed, Spead, jumpForce, smoothTime;
 
 	[SerializeField] Item[] items;
+	public float t;
 
 	int itemIndex;
 	int previousItemIndex = -1;
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	void Update()
 	{
+		t = t + Time.deltaTime;
 		if(!PV.IsMine)
 			return;
 
@@ -103,10 +106,14 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 			}
 		}
 
-		if(Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButton(0) && t > 0.1f) 
 		{
 			items[itemIndex].Use();
-		}
+			t = 0f;
+			audioShoot.Play();
+
+
+        }
 
 		if(transform.position.y < -10f) // Die if you fall out of the world
 		{
@@ -234,7 +241,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 	void Die()
 	{
 		GameObject prefabToSpawn = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "body"), transform.position, transform.rotation);
-		prefabToSpawn.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity);
+		prefabToSpawn.GetComponent<Rigidbody>().AddForce(player.GetComponent<Rigidbody>().velocity);
 		playerManager.Die();
 	}
 }
