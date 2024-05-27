@@ -1088,17 +1088,17 @@
       <Project>{9951284D-E88F-5D50-81BC-7B01F6ABFC4F}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.csproj">
-      <Project>{60BBA43C-4081-02CE-A164-425F48FAB94F}</Project>
-      <Name>Unity.AI.Navigation</Name>
+    <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
+      <Project>{119CBCC1-EAD3-47F1-8B7E-C56DFB8BF4D2}</Project>
+      <Name>Unity.Postprocessing.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{E9E29A30-AD68-085B-3D0A-956A09CABF34}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
-      <Project>{119CBCC1-EAD3-47F1-8B7E-C56DFB8BF4D2}</Project>
-      <Name>Unity.Postprocessing.Runtime</Name>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{60BBA43C-4081-02CE-A164-425F48FAB94F}</Project>
+      <Name>Unity.AI.Navigation</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
       <Project>{FEF97AFA-933A-1F02-A44F-0864F5ACF2B4}</Project>
@@ -1108,13 +1108,13 @@
       <Project>{11B4D4BE-8DF7-5BB6-641E-388D2A5E8FAC}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{85F40876-4508-DA13-E6FD-9C7C471870DF}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Editor.csproj">
       <Project>{58A6BC9C-5D42-F30D-7B57-E8F86C1FD8B3}</Project>
       <Name>Unity.Postprocessing.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{85F40876-4508-DA13-E6FD-9C7C471870DF}</Project>
+      <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
       <Project>{40185AD6-BFA2-6717-00A8-C1FD45A6B053}</Project>
